@@ -6,6 +6,10 @@ class Person:
     def deposit(self, number, account):
         self.cash -= number
         account.deposit(number)
+
+    def withdraw(self, number, account):
+        self.cash += number
+        account.withdraw(number)
    
 
 

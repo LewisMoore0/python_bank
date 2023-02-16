@@ -24,3 +24,21 @@ class PersonTest(TestCase):
 
         testPerson.deposit(100, testAccount)
         assert testAccount.balance == 100
+
+    def test_personWithdrawIncreasesCash(self):
+        testPerson = Person('Lewis', 200)
+        testAccount = Account(testPerson)
+
+        testPerson.deposit(100, testAccount)
+        testPerson.withdraw(50, testAccount)
+
+        assert testPerson.cash == 150
+
+    def test_personWithdrawDecreasesAccountBalance(self):
+        testPerson = Person('Lewis', 200)
+        testAccount = Account(testPerson)
+
+        testPerson.deposit(100, testAccount)
+        testPerson.withdraw(50, testAccount)
+
+        assert testAccount.balance == 50

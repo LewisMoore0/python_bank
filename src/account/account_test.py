@@ -19,3 +19,11 @@ class AccountTest(TestCase):
 
     def test_accountHasPersonObjectOwnerOnCreation(self):
         assert self.newAccount.owner == self.newPerson
+
+    def test_accountWithdrawDecreasesBalance(self):
+        testPerson = Person('Lewis')
+        testAccount = Account(testPerson)
+        testAccount.deposit(100)
+        testAccount.withdraw(50)
+
+        assert testAccount.balance == 50

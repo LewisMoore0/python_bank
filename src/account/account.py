@@ -8,3 +8,6 @@ class Account:
 
     def deposit(self, number):
         self.balance += number
+    
+    def withdraw(self, number):
+        self.balance -= number
