@@ -27,3 +27,22 @@ class AccountTest(TestCase):
         testAccount.withdraw(50)
 
         assert testAccount.balance == 50
+
+    def test_accountTransactionHistoryReturnsLastFiveTransactions(self):
+        testPerson = Person('Lewis')
+        testAccount = Account(testPerson)
+
+        testAccount.deposit(100)
+        testAccount.withdraw(50)
+        testAccount.deposit(1000)
+        testAccount.withdraw(500)
+        testAccount.withdraw(250)
+
+        assert testAccount.show_transaction_history() == [
+            ['withdraw', 250, 300],
+            ['withdraw', 500, 550],
+            ['deposit', 1000, 1050],
+            ['withdraw', 50, 50],
+            ['deposit', 100, 100]
+        ]
+
