@@ -32,6 +32,7 @@ class AccountTest(TestCase):
         testPerson = Person('Lewis')
         testAccount = Account(testPerson)
 
+        testAccount.deposit(1000)
         testAccount.deposit(100)
         testAccount.withdraw(50)
         testAccount.deposit(1000)
@@ -39,10 +40,11 @@ class AccountTest(TestCase):
         testAccount.withdraw(250)
 
         assert testAccount.show_transaction_history() == [
-            ['withdraw', 250, 300],
-            ['withdraw', 500, 550],
-            ['deposit', 1000, 1050],
-            ['withdraw', 50, 50],
-            ['deposit', 100, 100]
+            ['withdraw', 250, 1300],
+            ['withdraw', 500, 1550],
+            ['deposit', 1000, 2050],
+            ['withdraw', 50, 1050],
+            ['deposit', 100, 1100]
         ]
+
 

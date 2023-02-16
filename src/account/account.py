@@ -17,4 +17,6 @@ class Account:
 
 
     def show_transaction_history(self):
+        if len(self.transactions) > 5:
+            return self.transactions[:5]
         return self.transactions
