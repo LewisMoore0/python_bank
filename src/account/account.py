@@ -1,6 +1,7 @@
 class Account:
-    def __init__(self, name, balance = 0):
+    def __init__(self, name, owner, balance = 0):
         self.name = name
+        self.owner = owner
         self.balance = balance
     
     def check_balance(self):

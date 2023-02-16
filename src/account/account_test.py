@@ -1,9 +1,11 @@
 from account.account import Account
+from person.person import Person
 from unittest import TestCase
 
 class AccountTest(TestCase):
 
-    newAccount = Account('Lewis')
+    newPerson = Person('Lewis')
+    newAccount = Account('Lewis', newPerson)
 
     def test_account(self):
         assert self.newAccount.name == 'Lewis'
@@ -17,3 +19,6 @@ class AccountTest(TestCase):
     def test_depositMoneyIncreasesBalance(self):
         self.newAccount.deposit(100)
         assert self.newAccount.check_balance() == 100
+
+    def test_accountHasPersonObjectOwnerOnCreation(self):
+        assert self.newAccount.owner == self.newPerson
