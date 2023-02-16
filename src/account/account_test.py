@@ -5,10 +5,7 @@ from unittest import TestCase
 class AccountTest(TestCase):
 
     newPerson = Person('Lewis')
-    newAccount = Account('Lewis', newPerson)
-
-    def test_account(self):
-        assert self.newAccount.name == 'Lewis'
+    newAccount = Account(newPerson)
 
     def test_accountBalanceIsZeroOnCreation(self):
         assert self.newAccount.balance == 0
