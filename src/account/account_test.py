@@ -2,6 +2,11 @@ from account.account import Account
 from unittest import TestCase
 
 class AccountTest(TestCase):
+
+    newAccount = Account('Lewis')
+
     def test_account(self):
-        newAccount = Account('Lewis')
-        assert newAccount.name == 'Lewis'
+        assert self.newAccount.name == 'Lewis'
+
+    def test_accountBalanceIsZeroOnCreation(self):
+        assert self.newAccount.balance == 0
