@@ -5,3 +5,6 @@ class Account:
     
     def check_balance(self):
         return self.balance
+
+    def deposit(self, number):
+        self.balance += number

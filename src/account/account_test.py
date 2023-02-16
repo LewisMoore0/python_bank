@@ -13,3 +13,7 @@ class AccountTest(TestCase):
 
     def test_checkBalanceReturnsBalance(self):
         assert self.newAccount.check_balance() == 0
+
+    def test_depositMoneyIncreasesBalance(self):
+        self.newAccount.deposit(100)
+        assert self.newAccount.check_balance() == 100
